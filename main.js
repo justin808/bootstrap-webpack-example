@@ -83,15 +83,15 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!/Users/justin/forks/bootstrap-webpack-example/node_modules/css-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/node_modules/sass-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/bootstrap-sass-styles.loader.js!/Users/justin/forks/bootstrap-webpack-example/bootstrap.config.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!/Users/justin/forks/bootstrap-webpack-example/node_modules/css-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/node_modules/sass-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/bootstrap-sass-styles.loader.js!/Users/justin/forks/bootstrap-webpack-example/bootstrap-sass.config.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/justin/forks/bootstrap-webpack-example/node_modules/css-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/node_modules/sass-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/bootstrap-sass-styles.loader.js!/Users/justin/forks/bootstrap-webpack-example/bootstrap.config.js", function() {
-			var newContent = require("!!/Users/justin/forks/bootstrap-webpack-example/node_modules/css-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/node_modules/sass-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/bootstrap-sass-styles.loader.js!/Users/justin/forks/bootstrap-webpack-example/bootstrap.config.js");
+		module.hot.accept("!!/Users/justin/forks/bootstrap-webpack-example/node_modules/css-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/node_modules/sass-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/bootstrap-sass-styles.loader.js!/Users/justin/forks/bootstrap-webpack-example/bootstrap-sass.config.js", function() {
+			var newContent = require("!!/Users/justin/forks/bootstrap-webpack-example/node_modules/css-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/node_modules/sass-loader/index.js!/Users/justin/forks/bootstrap-webpack-example/node_modules/bootstrap-sass-webpack/bootstrap-sass-styles.loader.js!/Users/justin/forks/bootstrap-webpack-example/bootstrap-sass.config.js");
 			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
 			update(newContent);
 		});

@@ -72,10 +72,6 @@ the browser scrolls past the [Main Header].
                     <a href="#file-5" role="tab" data-toggle="tab">karma.conf.js</a>
                   </li>
                 
-                  <li role="presentation" class="">
-                    <a href="#file-6" role="tab" data-toggle="tab">bootstrap.config.js</a>
-                  </li>
-                
               </ul>
             </div>
           </div>
@@ -119,7 +115,7 @@ initialize here. This is however just a test to load
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=9><pre class="prettyprint">require(&#39;bootstrap-sass-webpack!./bootstrap.config.js&#39;);
+                      <?prettify linenums=9><pre class="prettyprint">require(&#39;bootstrap-sass-webpack!./bootstrap-sass.config.js&#39;);
 var $ = require(&#39;jquery&#39;);
 
 </pre>
@@ -1269,132 +1265,6 @@ List of plugins we are using for frameworks, preprecessors, and reporters.</li>
   });
 };
 
-</pre>
-                    
-                  </td>
-                </tr>
-              
-            </table>
-          </div>
-        
-          <div role="tabpanel" class="tab-pane fade" id="file-6">
-            <table class="file-table">
-              <!-- doc.docco is an array of sections. Each one contains the -->
-              <!-- html for displaying the documention and code associated with it. -->
-              
-                <tr>
-                  <td class="file-docs">
-                    
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=1><pre class="prettyprint">&#39;use strict&#39;;
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h2 id="bootstrap-sass-webpack-configuration">bootstrap-sass-webpack Configuration</h2>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=4><pre class="prettyprint">
-module.exports = {
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h3 id="scripts">Scripts</h3>
-<p>Any scripts here set to false will never
-make it to the client, it&#39;s not packaged
-by webpack.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=9><pre class="prettyprint">  scripts: {
-    &#39;transition&#39;: true,
-    &#39;alert&#39;: true,
-    &#39;button&#39;: true,
-    &#39;carousel&#39;: true,
-    &#39;collapse&#39;: true,
-    &#39;dropdown&#39;: true,
-    &#39;modal&#39;: true,
-    &#39;tooltip&#39;: true,
-    &#39;popover&#39;: true,
-    &#39;scrollspy&#39;: true,
-    &#39;tab&#39;: true,
-    &#39;affix&#39;: true
-  },
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h3 id="styles">Styles</h3>
-<p>Enable or disable certain less components and thus remove
-the css for them from the build.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=26><pre class="prettyprint">  styles: {
-    &quot;mixins&quot;: true,
-
-    &quot;normalize&quot;: true,
-    &quot;print&quot;: true,
-
-    &quot;scaffolding&quot;: true,
-    &quot;type&quot;: true,
-    &quot;code&quot;: true,
-    &quot;grid&quot;: true,
-    &quot;tables&quot;: true,
-    &quot;forms&quot;: true,
-    &quot;buttons&quot;: true,
-
-    &quot;component-animations&quot;: true,
-    &quot;glyphicons&quot;: true,
-    &quot;dropdowns&quot;: true,
-    &quot;button-groups&quot;: true,
-    &quot;input-groups&quot;: true,
-    &quot;navs&quot;: true,
-    &quot;navbar&quot;: true,
-    &quot;breadcrumbs&quot;: true,
-    &quot;pagination&quot;: true,
-    &quot;pager&quot;: true,
-    &quot;labels&quot;: true,
-    &quot;badges&quot;: true,
-    &quot;jumbotron&quot;: true,
-    &quot;thumbnails&quot;: true,
-    &quot;alerts&quot;: true,
-    &quot;progress-bars&quot;: true,
-    &quot;media&quot;: true,
-    &quot;list-group&quot;: true,
-    &quot;panels&quot;: true,
-    &quot;wells&quot;: true,
-    &quot;close&quot;: true,
-
-    &quot;modals&quot;: true,
-    &quot;tooltip&quot;: true,
-    &quot;popovers&quot;: true,
-    &quot;carousel&quot;: true,
-
-    &quot;utilities&quot;: true,
-    &quot;responsive-utilities&quot;: true
-  }
-};
 </pre>
                     
                   </td>

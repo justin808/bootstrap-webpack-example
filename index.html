@@ -73,15 +73,7 @@ the browser scrolls past the [Main Header].
                   </li>
                 
                   <li role="presentation" class="">
-                    <a href="#file-6" role="tab" data-toggle="tab">style.less</a>
-                  </li>
-                
-                  <li role="presentation" class="">
-                    <a href="#file-7" role="tab" data-toggle="tab">bootstrap.config.less</a>
-                  </li>
-                
-                  <li role="presentation" class="">
-                    <a href="#file-8" role="tab" data-toggle="tab">bootstrap.config.js</a>
+                    <a href="#file-6" role="tab" data-toggle="tab">bootstrap.config.js</a>
                   </li>
                 
               </ul>
@@ -154,7 +146,6 @@ the main header.</p>
     }
   });
 });
-
 </pre>
                     
                   </td>
@@ -553,7 +544,6 @@ loads bootstrap&#39;s css.</p>
   }
 };
 
-
 </pre>
                     
                   </td>
@@ -574,7 +564,13 @@ loads bootstrap&#39;s css.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=1><pre class="prettyprint">(function () {
+                      <?prettify linenums=1><pre class="prettyprint">/*
+ * Copyright (C) 2014 Scott Beck, all rights reserved
+ *
+ * Licensed under the MIT license
+ *
+ */
+(function () {
   &#39;use strict&#39;;
 </pre>
                     
@@ -589,7 +585,7 @@ loads bootstrap&#39;s css.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=4><pre class="prettyprint">  var _ = require(&#39;lodash&#39;);
+                      <?prettify linenums=10><pre class="prettyprint">  var _ = require(&#39;lodash&#39;);
   var del = require(&quot;del&quot;);
   var gulp = require(&quot;gulp&quot;);
   var $ = require(&#39;gulp-load-plugins&#39;)();
@@ -610,7 +606,7 @@ in <a href="http://phantomjs.org/">PhantomJS</a>.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=13><pre class="prettyprint">  var karma = require(&#39;karma&#39;).server;
+                      <?prettify linenums=19><pre class="prettyprint">  var karma = require(&#39;karma&#39;).server;
 
 </pre>
                     
@@ -626,7 +622,7 @@ karma.conf.js uses the same configuration file.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=17><pre class="prettyprint">  var webpackConfig = require(&quot;./webpack.config.js&quot;);
+                      <?prettify linenums=23><pre class="prettyprint">  var webpackConfig = require(&quot;./webpack.config.js&quot;);
 
 </pre>
                     
@@ -641,7 +637,7 @@ karma.conf.js uses the same configuration file.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=20><pre class="prettyprint">  var KarmaConfig = require(&#39;path&#39;).join(__dirname, &#39;./karma.conf.js&#39;);
+                      <?prettify linenums=26><pre class="prettyprint">  var KarmaConfig = require(&#39;path&#39;).join(__dirname, &#39;./karma.conf.js&#39;);
 
 </pre>
                     
@@ -656,7 +652,7 @@ karma.conf.js uses the same configuration file.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=23><pre class="prettyprint">  var IndexSources = [
+                      <?prettify linenums=29><pre class="prettyprint">  var IndexSources = [
     &#39;index.js&#39;,
     &#39;index.html&#39;,
     &#39;webpack.config.js&#39;,
@@ -675,8 +671,32 @@ karma.conf.js uses the same configuration file.</p>
                 <tr>
                   <td class="file-docs">
                     <h2 id="helper-functions">Helper Functions</h2>
-<h3 id="highlight">highlight</h3>
-<p>Returns code with <a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="highlight">highlight</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Returns code with <a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
 markup setup to use line numbers started at specified line. Used in both docco and
 doccoHtml to add prettify markup to the code sections of the docs.</p>
 
@@ -684,7 +704,7 @@ doccoHtml to add prettify markup to the code sections of the docs.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=41><pre class="prettyprint">  var highlight = function (code, startLine) {
+                      <?prettify linenums=47><pre class="prettyprint">  var highlight = function (code, startLine) {
     var html = &#39;&lt;?prettify&#39;;
     if (_.isNumber(startLine))
       html += &#39; linenums=&#39; + startLine;
@@ -704,7 +724,7 @@ doccoHtml to add prettify markup to the code sections of the docs.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=49><pre class="prettyprint">  marked.setOptions({ highlight: highlight });
+                      <?prettify linenums=55><pre class="prettyprint">  marked.setOptions({ highlight: highlight });
 
 </pre>
                     
@@ -714,7 +734,19 @@ doccoHtml to add prettify markup to the code sections of the docs.</p>
                 <tr>
                   <td class="file-docs">
                     <h3 id="docco">docco</h3>
-<p><a href="http://github.com/bline/code-part">code-part</a> To parse out code/docs
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><a href="http://github.com/bline/code-part">code-part</a> To parse out code/docs
 and <a href="https://github.com/chjj/marked">marked</a> to format the docs.
 marked is manually applied because we are using
 <a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
@@ -724,7 +756,7 @@ to highlight code.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=58><pre class="prettyprint">  var docco = function (path, code, config) {
+                      <?prettify linenums=64><pre class="prettyprint">  var docco = function (path, code, config) {
     var sections = part(path, code, config);
     _.forEach(sections, function (section) {
       section.codeHtml = highlight(section.codeText, section.codeLine);
@@ -741,14 +773,26 @@ to highlight code.</p>
                 <tr>
                   <td class="file-docs">
                     <h2 id="tasks">Tasks</h2>
-<h3 id="task-clean">task clean</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-clean">task clean</h3>
 <p>Cleans up dist directory using <a href="https://github.com/sindresorhus/del">del</a>.</p>
 
                   </td>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=71><pre class="prettyprint">  gulp.task(&quot;clean&quot;, function (done) {
+                      <?prettify linenums=77><pre class="prettyprint">  gulp.task(&quot;clean&quot;, function (done) {
     del([&quot;dist/*&quot;], done);
   });
 
@@ -767,7 +811,7 @@ with the <code>index.html</code> <a href="https://lodash.com/docs#template">loda
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=78><pre class="prettyprint">  gulp.task(&quot;index&quot;, [&quot;clean&quot;], function (done) {
+                      <?prettify linenums=84><pre class="prettyprint">  gulp.task(&quot;index&quot;, [&quot;clean&quot;], function (done) {
     var docs = [];
     gulp.src(IndexSources)
       .pipe($.tap(function (file) {
@@ -789,7 +833,7 @@ with the <code>index.html</code> <a href="https://lodash.com/docs#template">loda
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=88><pre class="prettyprint">      .on(&#39;end&#39;, function () {
+                      <?prettify linenums=94><pre class="prettyprint">      .on(&#39;end&#39;, function () {
         gulp.src(&#39;index.html&#39;)
           .pipe($.template({ docs: docs }))
           .pipe(gulp.dest(&#39;dist&#39;))
@@ -812,7 +856,7 @@ into the dist directory. Uses <a href="https://github.com/shama/gulp-webpack">gu
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=99><pre class="prettyprint">  gulp.task(&quot;webpack&quot;, [&quot;clean&quot;], function () {
+                      <?prettify linenums=105><pre class="prettyprint">  gulp.task(&quot;webpack&quot;, [&quot;clean&quot;], function () {
     return gulp.src(&quot;index.js&quot;)
       .pipe($.webpack(webpackConfig))
       .pipe(gulp.dest(&#39;dist&#39;));
@@ -832,7 +876,7 @@ into the dist directory. Uses <a href="https://github.com/shama/gulp-webpack">gu
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=107><pre class="prettyprint">  gulp.task(&quot;build&quot;, [&quot;webpack&quot;, &quot;index&quot;]);
+                      <?prettify linenums=113><pre class="prettyprint">  gulp.task(&quot;build&quot;, [&quot;webpack&quot;, &quot;index&quot;]);
 
 </pre>
                     
@@ -852,7 +896,7 @@ your browser when files in the dist directory change.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=115><pre class="prettyprint">  gulp.task(&quot;watch&quot;, [&quot;build&quot;], function () {
+                      <?prettify linenums=121><pre class="prettyprint">  gulp.task(&quot;watch&quot;, [&quot;build&quot;], function () {
     $.livereload.listen();
     gulp.watch(&#39;dist/**/*&#39;).on(&#39;change&#39;, $.livereload.changed);
     gulp.watch(IndexSources, [&#39;build&#39;]);
@@ -874,7 +918,7 @@ your browser when files in the dist directory change.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=125><pre class="prettyprint">  gulp.task(&quot;deploy&quot;, [&#39;build&#39;], function () {
+                      <?prettify linenums=131><pre class="prettyprint">  gulp.task(&quot;deploy&quot;, [&#39;build&#39;], function () {
     return gulp.src(&quot;dist/**/*&quot;)
       .pipe($.ghPages(&#39;git@github.com:bline/bootstrap-webpack-example.git&#39;));
   });
@@ -893,7 +937,7 @@ your browser when files in the dist directory change.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=132><pre class="prettyprint">  gulp.task(&quot;test&quot;, function (done) {
+                      <?prettify linenums=138><pre class="prettyprint">  gulp.task(&quot;test&quot;, function (done) {
     karma.start({
       configFile: KarmaConfig,
       singleRun: true
@@ -914,9 +958,8 @@ your browser when files in the dist directory change.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=141><pre class="prettyprint">  gulp.task(&quot;default&quot;, [&quot;test&quot;]);
+                      <?prettify linenums=147><pre class="prettyprint">  gulp.task(&quot;default&quot;, [&quot;test&quot;]);
 })();
-
 </pre>
                     
                   </td>
@@ -946,7 +989,19 @@ your browser when files in the dist directory change.</p>
                 <tr>
                   <td class="file-docs">
                     <h2 id="karma-configuration">Karma Configuration</h2>
-<p><a href="http://karma-runner.github.io/">Karma</a> is used for running
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><a href="http://karma-runner.github.io/">Karma</a> is used for running
 tests in this demo with the help of
 <a href="https://github.com/webpack/karma-webpack">karma-webpack</a>.</p>
 
@@ -954,7 +1009,8 @@ tests in this demo with the help of
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=8><pre class="prettyprint">module.exports = function (config) {
+                      <?prettify linenums=8><pre class="prettyprint">
+module.exports = function (config) {
   config.set({
 </pre>
                     
@@ -1213,7 +1269,6 @@ List of plugins we are using for frameworks, preprecessors, and reporters.</li>
   });
 };
 
-
 </pre>
                     
                   </td>
@@ -1223,178 +1278,6 @@ List of plugins we are using for frameworks, preprecessors, and reporters.</li>
           </div>
         
           <div role="tabpanel" class="tab-pane fade" id="file-6">
-            <table class="file-table">
-              <!-- doc.docco is an array of sections. Each one contains the -->
-              <!-- html for displaying the documention and code associated with it. -->
-              
-                <tr>
-                  <td class="file-docs">
-                    
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      &nbsp;
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h2 id="baseline">Baseline</h2>
-<p>Included from bootstrap.config.less.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=5><pre class="prettyprint">body {
-  padding-top: 20px;
-}
-
-.doc-content {
-  padding-top: 10px;
-}
-
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h2 id="nav">Nav</h2>
-<p>When nav is affixed, set it&#39;s position and size.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=15><pre class="prettyprint">#nav.affix {
-  position: fixed;
-  .opacity(0.8);
-  top: 3px;
-  width: 80%;
-  z-index: 10;
-}
-
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h2 id="code">Code</h2>
-<p>Set up table to render two column view
-of documentation on left and code, syntax
-highlighted on the right.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=27><pre class="prettyprint">table.file-table {
-  width: 100%;
-  border-radius: @border-radius-base;
-  border: 0px;
-  border-spacing: 0px;
-  display: table;
-  table-layout: fixed;
-
-  td.file-docs {
-    background-color: #fff;
-    width: 30%;
-    max-width: 30%;
-    text-overflow: ellipsis;
-    padding: 5px;
-    vertical-align: top;
-  }
-
-  td.file-code {
-    border-left: 1px groove darken(#f5f5f5, 20%);
-    background-color: #f5f5f5;
-    color: #333;
-    width: 70%;
-    max-width: 70%;
-    text-overflow: ellipsis;
-    padding-left: 5px;
-    vertical-align: bottom;
-  }
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <p>Remove extra separation between the code
-so it looks more like one continuous block.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=56><pre class="prettyprint">  pre.prettyprint {
-    padding: 0 !important;
-    border: 0 !important;
-    margin: 0 0 !important;
-  }
-}
-
-
-</pre>
-                    
-                  </td>
-                </tr>
-              
-            </table>
-          </div>
-        
-          <div role="tabpanel" class="tab-pane fade" id="file-7">
-            <table class="file-table">
-              <!-- doc.docco is an array of sections. Each one contains the -->
-              <!-- html for displaying the documention and code associated with it. -->
-              
-                <tr>
-                  <td class="file-docs">
-                    <h2 id="customize-variables">Customize Variables</h2>
-<p>Remove borders around <code>&lt;pre&gt;</code> block so the code
-flows with our right column layout.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=5><pre class="prettyprint">@pre-border-color: @pre-bg; // hide the border.
-
-</pre>
-                    
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td class="file-docs">
-                    <h2 id="include-less">Include Less</h2>
-<p>Include our main less style sheet here so we can
-take advantage of boostrap variables and mixins.</p>
-
-                  </td>
-                  <!-- If no code text, leave an empty cell for formatting -->
-                  <td class="file-code">
-                    
-                      <?prettify linenums=11><pre class="prettyprint">@import &quot;style.less&quot;;
-
-
-</pre>
-                    
-                  </td>
-                </tr>
-              
-            </table>
-          </div>
-        
-          <div role="tabpanel" class="tab-pane fade" id="file-8">
             <table class="file-table">
               <!-- doc.docco is an array of sections. Each one contains the -->
               <!-- html for displaying the documention and code associated with it. -->
@@ -1420,7 +1303,8 @@ take advantage of boostrap variables and mixins.</p>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
                     
-                      <?prettify linenums=4><pre class="prettyprint">module.exports = {
+                      <?prettify linenums=4><pre class="prettyprint">
+module.exports = {
 </pre>
                     
                   </td>
@@ -1511,7 +1395,6 @@ the css for them from the build.</p>
     &quot;responsive-utilities&quot;: true
   }
 };
-
 </pre>
                     
                   </td>

@@ -1,5 +1,5 @@
 'use strict';
-// ## bootstrap-webpack Configuration
+// ## bootstrap-sass-webpack Configuration
 
 module.exports = {
   // ### Scripts

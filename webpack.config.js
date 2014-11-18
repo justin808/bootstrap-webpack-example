@@ -19,10 +19,10 @@ module.exports = {
     // ### Loaders
     loaders: [
       // **IMPORTANT** This is needed so that each bootstrap js file required by
-      // bootstrap-webpack has access to the jQuery object
-      { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
+      // bootstrap-sass-webpack has access to the jQuery object
+      { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' },
 
-      // Needed for the css-loader when [bootstrap-webpack](https://github.com/bline/bootstrap-webpack)
+      // Needed for the css-loader when [bootstrap-sass-webpack](https://github.com/justin808/bootstrap-sass-webpack)
       // loads bootstrap's css.
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&minetype=application/font-woff" },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&minetype=application/octet-stream" },

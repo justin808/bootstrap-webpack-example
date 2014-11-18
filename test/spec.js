@@ -3,7 +3,7 @@
 describe('require', function () {
   it('should not throw', function () {
     expect(function () {
-      require('bootstrap-webpack!../bootstrap.config.js');
+      require('bootstrap-sass-webpack!../bootstrap-sass.config.js');
     }).not.to.throw();
   });
 });
